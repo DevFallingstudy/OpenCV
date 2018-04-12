@@ -24,7 +24,7 @@ Mat getHistogramImage(Mat* img);
 void smoothingFunc(string imgName);
 
 int main(int argc, const char * argv[]) {
-    equalizeHistFunc("TheWorld.jpg");
+    equalizeHistFunc("Lenna.png");
 //    smoothingFunc("Gray_Lenna.png");
     
     return 0;
@@ -37,16 +37,6 @@ void equalizeHistFunc(string imgName) {
     Mat img_result;
     
     // Variables for Histogram
-    int histSize = 256;
-    float range[] = { 0, 256 } ;
-    const float* histRange = { range };
-    bool uniform = true;
-    bool accumulate = false;
-    int hist_w = 512, hist_h = 400;
-    int bin_w = cvRound((double) hist_w / histSize);
-    Mat histImage1(hist_h, hist_w, CV_8UC3, Scalar(0,0,0));
-    Mat histImage2(hist_h, hist_w, CV_8UC3, Scalar(0,0,0));
-    Mat b_hist1, b_hist2;
     Mat histImg1, histImg2;
     
     // Show images
@@ -63,8 +53,8 @@ void equalizeHistFunc(string imgName) {
     
     namedWindow("Histogram Result", WINDOW_AUTOSIZE);
     namedWindow("Histogram Original", WINDOW_AUTOSIZE);
-    imshow("Histogram Result", histImg1);
-    imshow("Histogram Original", histImg2);
+    imshow("Histogram Result", histImg2);
+    imshow("Histogram Original", histImg1);
     waitKey(0);
     
 }

@@ -22,7 +22,7 @@ void showWithsaturate();
 void showWithLinearBlending();
 
 int main(int argc, const char * argv[]) {
-//    showWithsaturate();
+    showWithsaturate();
     showWithLinearBlending();
     
     return 0;
@@ -37,13 +37,13 @@ void showWithsaturate(){
     
     image = imread(imageName.c_str(), IMREAD_COLOR);
     
-    width = image.size().width;
-    height = image.size().height;
-    
     if (image.empty()) {
         cout << "Could not open or find image : " << imageName << std::endl;
         return ;
     }else{
+        width = image.size().width;
+        height = image.size().height;
+        
         cout << "Enter the alpha value : ";
         cin >> alpha;
         cout << "Enter the beta value : ";
